@@ -8,9 +8,8 @@
 import Foundation
 import UIKit
 
-public class AlertViewController: UIViewController {
-    
-    public func showAlert(title: String, message: String?, style: UIAlertController.Style, actions: [UIAlertAction]) {
+extension UIViewController {
+    func showAlert(title: String, message: String?, style: UIAlertController.Style, actions: [UIAlertAction]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         actions.forEach { alert.addAction($0) }
         present(alert, animated: true, completion: nil)
